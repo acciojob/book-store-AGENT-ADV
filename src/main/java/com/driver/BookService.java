@@ -12,8 +12,15 @@ public class BookService
     @Autowired
     BookRepository bookRepository;
 
+    private int count;
+    public BookService()
+    {
+        this.count = 1;
+    }
+
     public Book createBook(Book book)
     {
+        book.setId(count);
         return bookRepository.save(book);
     }
 
