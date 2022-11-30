@@ -18,14 +18,14 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book findBookById(int id)
+    public Book findBookById(String id)
     {
-        return bookRepository.findBookById(id);
+        return bookRepository.findBookById(Integer.parseInt(id));
     }
 
-    public void deleteBookById(int id)
+    public void deleteBookById(String id)
     {
-        bookRepository.deleteBookById(id);
+        bookRepository.deleteBookById(Integer.parseInt(id));
     }
 
     public List<Book> findAllBooks()
