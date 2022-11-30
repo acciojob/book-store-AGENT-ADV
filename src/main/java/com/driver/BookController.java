@@ -14,18 +14,12 @@ public class BookController {
     BookService bookService;
 
 
-   private int count;
 
-    public BookController() {
-        this.count = 1;
-    }
 
     @PostMapping("/create-book")
     public ResponseEntity<Book> createBook(@RequestBody Book book)
     {
-        Book newBook = bookService.createBook(book);
-        newBook.setId(count++);
-        return new ResponseEntity<>(newBook, HttpStatus.CREATED);
+        return new ResponseEntity<>(bookService.createBook(book), HttpStatus.CREATED);
     }
     @GetMapping("/get-book-by-id/{id}")
     public ResponseEntity<Book> findBookByid(@PathVariable("id") String id)
@@ -62,7 +56,6 @@ public class BookController {
     public ResponseEntity<String> deleteAllBooks()
     {
         bookService.deleteAllBooks();
-        this.count = 1;
         return new ResponseEntity<>("success", HttpStatus.ACCEPTED);
     }
 
