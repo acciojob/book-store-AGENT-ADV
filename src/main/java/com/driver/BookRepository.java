@@ -47,7 +47,7 @@ public class BookRepository {
 
     public void deleteAll()
     {
-        listOfBooks.clear();
+        listOfBooks = new ArrayList<>();
     }
 
     public List<Book> findBooksByAuthor(String author)
