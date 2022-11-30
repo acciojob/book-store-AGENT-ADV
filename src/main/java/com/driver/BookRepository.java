@@ -1,19 +1,18 @@
 package com.driver;
 import java.util.*;
 
-import org.springframework.stereotype.Component;
+
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Component
-public class BookRepository {
+public class BookRepository
+{
 
     private int count;
-
-
-    List<Book> listOfBooks = new ArrayList<>();
+    List<Book> listOfBooks;
 
     public BookRepository(){
+        this.listOfBooks = new ArrayList<>();
         this.count = 1;
     }
 

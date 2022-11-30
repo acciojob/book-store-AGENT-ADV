@@ -3,12 +3,11 @@ package com.driver;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
-@Component
-public class BookService {
+public class BookService
+{
     
     @Autowired
     BookRepository bookRepository;
@@ -18,14 +17,14 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book findBookById(String id)
+    public Book findBookById(int id)
     {
-        return bookRepository.findBookById(Integer.parseInt(id));
+        return bookRepository.findBookById(id);
     }
 
-    public void deleteBookById(String id)
+    public void deleteBookById(int id)
     {
-        bookRepository.deleteBookById(Integer.parseInt(id));
+        bookRepository.deleteBookById(id);
     }
 
     public List<Book> findAllBooks()
