@@ -1,5 +1,8 @@
 package com.driver;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Book {
     
      private int id;
@@ -14,8 +17,8 @@ public class Book {
 
      }
 
-     public Book(int id, String name, String genre, String author) {
-          this.id = id;
+     public Book(String name, String genre, String author)
+     {
           this.name = name;
           this.genre = genre;
           this.author = author;

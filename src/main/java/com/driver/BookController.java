@@ -13,9 +13,13 @@ public class BookController {
     @Autowired
     BookService bookService;
 
+    static int count=1;
 
     @PostMapping("/create-book")
-    public ResponseEntity<Book> createBook(@RequestBody Book book){
+    public ResponseEntity<Book> createBook(@RequestBody Book book)
+    {
+        book.setId(count);
+        count++;
         bookService.createBook(book);
         return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
