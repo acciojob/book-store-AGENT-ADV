@@ -23,7 +23,7 @@ public class BookController {
     @PostMapping("/create-book")
     public ResponseEntity<Book> createBook(@RequestBody Book book)
     {
-        book.setId(++count);
+        book.setId(count++);
 
         bookService.createBook(book);
         return new ResponseEntity<>(book, HttpStatus.CREATED);
