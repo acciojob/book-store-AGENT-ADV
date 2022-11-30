@@ -24,7 +24,7 @@ public class BookRepository {
     {
         for(Book b : listOfBooks)
         {
-            if(Integer.parseInt(b.getId()) == id) return b;
+            if(b.getId() == id) return b;
         }
         return null;
     }
@@ -37,7 +37,7 @@ public class BookRepository {
     public void deleteBookById(int id){
         for(Book b : listOfBooks)
         {
-            if(Integer.parseInt(b.getId()) == id)
+            if(b.getId() == id)
             {
                 listOfBooks.remove(b);
                 return;
