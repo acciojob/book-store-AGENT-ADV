@@ -8,18 +8,18 @@ import org.springframework.stereotype.Repository;
 public class BookRepository
 {
 
-    //private int count;
-    List<Book> listOfBooks;
+    private int count;
+    private List<Book> listOfBooks;
 
     public BookRepository(){
         this.listOfBooks = new ArrayList<>();
-        //this.count = 1;
+        this.count = 1;
     }
 
     public Book save(Book book)
     {
-        book.setId(1);
-        //count++;
+        book.setId(count);
+        count++;
         listOfBooks.add(book);
         return book;
     }
